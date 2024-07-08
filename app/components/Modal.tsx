@@ -20,9 +20,16 @@ const Modal: FC<ModalProps> = ({ children }) => {
       onClick={router.back}
     >
       <div
-        className="bg-white px-4 py-8 rounded-lg max-w-screen-lg w-full"
+        className="bg-white px-4 py-8 rounded-lg max-w-screen-lg w-full relative"
         onClick={onContentDialogueClick}
       >
+        <div
+          className="absolute top-[15px] right-[15px] cursor-pointer text-2xl select-none"
+          onClick={router.back}
+        >
+          &times;
+        </div>
+
         {children}
       </div>
     </div>
